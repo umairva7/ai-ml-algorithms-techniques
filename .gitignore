@@ -4,3 +4,6 @@ venv/
 ENV/
 env/
 .idea/
+*.docx
+~$*.docx
+
