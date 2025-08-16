@@ -141,6 +141,81 @@ Supervised learning is one of the most widely used approaches in machine learnin
 💡 **Tip:** Always start simple — sometimes a well-tuned basic model can outperform a complex one with poor data handling.
 
 ---
+## Evaluation Metrics
+
+Evaluation metrics are essential to understand how well a supervised learning model is performing. They vary depending on whether the task is **Regression** or **Classification**.
+
+### 🔹 For Regression
+1. **Mean Absolute Error (MAE)**  
+   Measures the average absolute difference between predicted and actual values.  
+   - Formula:  
+     \[
+     MAE = \frac{1}{n}\sum |y_i - \hat{y}_i|
+     \]  
+   - Lower is better.
+
+2. **Mean Squared Error (MSE)**  
+   Penalizes larger errors more than MAE by squaring the differences.  
+   - Formula:  
+     \[
+     MSE = \frac{1}{n}\sum (y_i - \hat{y}_i)^2
+     \]
+
+3. **Root Mean Squared Error (RMSE)**  
+   Square root of MSE, interpretable in the same unit as the target variable.  
+   - Formula:  
+     \[
+     RMSE = \sqrt{MSE}
+     \]
+
+4. **R² (Coefficient of Determination)**  
+   Explains how much variance in the target variable is explained by the model.  
+   - Ranges from 0 to 1 (closer to 1 is better).
+
+---
+
+### 🔹 For Classification
+1. **Accuracy**  
+   Proportion of correct predictions out of total predictions.  
+   - Formula:  
+     \[
+     Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
+     \]
+
+2. **Precision**  
+   Out of all predicted positives, how many are actually positive.  
+   - Formula:  
+     \[
+     Precision = \frac{TP}{TP + FP}
+     \]
+
+3. **Recall (Sensitivity or TPR)**  
+   Out of all actual positives, how many were correctly predicted.  
+   - Formula:  
+     \[
+     Recall = \frac{TP}{TP + FN}
+     \]
+
+4. **F1-Score**  
+   Harmonic mean of Precision and Recall. Useful when classes are imbalanced.  
+   - Formula:  
+     \[
+     F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}
+     \]
+
+5. **Confusion Matrix**  
+   A table showing TP, TN, FP, FN to visualize prediction performance.
+
+6. **ROC Curve & AUC (Area Under Curve)**  
+   - ROC: Plot of True Positive Rate (Recall) vs False Positive Rate.  
+   - AUC: Measures the entire two-dimensional area under ROC, higher is better.
+
+---
+
+## Summary
+- **Regression** → Focus on **MAE, MSE, RMSE, R²**.  
+- **Classification** → Focus on **Accuracy, Precision, Recall, F1-score, AUC**.  
+Choosing the right metric depends on the problem (imbalanced data → prefer Precision, Recall, F1-score instead of Accuracy).
 
 
 📂 **This repo** contains:
