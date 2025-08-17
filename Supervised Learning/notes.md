@@ -217,6 +217,34 @@ Evaluation metrics are essential to understand how well a supervised learning mo
 - **Classification** → Focus on **Accuracy, Precision, Recall, F1-score, AUC**.  
 Choosing the right metric depends on the problem (imbalanced data → prefer Precision, Recall, F1-score instead of Accuracy).
 
+## 🔍 Feature Selection Methods
+Feature selection helps improve model performance by removing irrelevant or redundant features.
+
+1. **Backward Elimination**  
+   - Start with all features.  
+   - Remove the least significant feature one by one (based on p-values or importance).  
+   - Stop when removing more features reduces model performance.  
+   All Features ➝ Remove Least Important ➝ Repeat ➝ Best Subset
+
+2. **Forward Selection**  
+   - Start with no features.  
+   - Add the most significant feature step by step.  
+   - Stop when adding more features does not improve performance. 
+   No Features ➝ Add Most Important ➝ Repeat ➝ Best Subset
+
+3. **LASSO (Least Absolute Shrinkage and Selection Operator)**  
+   - A regression technique with **L1 regularization**.  
+   - Penalizes the sum of absolute values of coefficients.  
+   - Pushes less important feature coefficients to **zero**.  
+   - Works as both **regularization** (avoids overfitting) and **automatic feature selection**.  
+
+**Intuition:**  
+LASSO is like a filter that keeps only the most useful features and throws away the noisy ones by setting their weight to 0.  
+
+  All Features ➝ Apply L1 Penalty ➝ Coefficients Shrink ➝ Irrelevant Features = 0
+---
+
+✅ With these techniques, we not only train models but also ensure they are efficient, interpretable, and generalize well to unseen data.
 
 📂 **This repo** contains:
 - Notes & explanations for **Supervised Learning**
